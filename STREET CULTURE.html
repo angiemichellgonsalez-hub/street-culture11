@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STREET CULTURE · Your style. Your rules. Your street.</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;800&display=swap">
+<style>
+:root{--ink:#000;--paper:#fff;--cement:#c9c9c4;--cement-d:#8d8d88;--red:#e10600;--f-display:"Anton","Impact","Arial Narrow",sans-serif;--f-body:"Archivo","Helvetica Neue",Arial,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 16px/1.5 var(--f-body)}
+img,svg{max-width:100%}
+a{color:inherit}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.d{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:.92;letter-spacing:.01em;margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2.d{font-size:clamp(2.4rem,7vw,5rem);margin-bottom:28px}
+.btn{display:inline-block;border:2px solid var(--paper);background:var(--paper);color:var(--ink);padding:14px 26px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:var(--red);border-color:var(--red);color:var(--paper)}
+.btn.o{background:transparent;color:var(--paper)}
+.btn.o:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+header.top{position:sticky;top:0;z-index:20;background:#000d;backdrop-filter:blur(8px);border-bottom:1px solid #333;padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.logo{font-family:var(--f-display);font-size:1.6rem;text-decoration:none;letter-spacing:.04em;margin-right:auto}
+.logo i{color:var(--red);font-style:normal}
+nav.main{display:flex;gap:22px}
+nav.main a{text-decoration:none;font-weight:600;font-size:.9rem}
+nav.main a:hover{color:var(--red)}
+.ib{background:none;border:0;padding:8px;font-weight:800;min-width:44px;min-height:44px}
+.ib b{background:var(--red);border-radius:99px;padding:1px 7px;font-size:.75rem;margin-left:2px}
+#burger{display:none}
+@media(max-width:820px){nav.main{display:none;position:absolute;top:60px;left:0;right:0;background:#000;flex-direction:column;padding:20px;border-bottom:1px solid #333}nav.main.open{display:flex}nav.main a{font-size:1.4rem;padding:8px 0}#burger{display:block}}
+/* HERO */
+.hero{padding:0;min-height:88vh;display:grid;align-items:end;position:relative;overflow:hidden;background:
+repeating-linear-gradient(90deg,#0000 0 118px,#ffffff10 118px 120px),
+repeating-linear-gradient(0deg,#0000 0 78px,#ffffff10 78px 80px),
+radial-gradient(circle at 75% 30%,#555,#1a1a1a 60%)}
+.hero .tag{position:absolute;right:4vw;top:12vh;font-family:var(--f-display);font-size:clamp(8rem,28vw,26rem);color:#fff1;line-height:.8;user-select:none}
+.hero .wrap{position:relative;padding-bottom:64px;padding-top:120px}
+.hero h1{font-size:clamp(3.2rem,11.5vw,9.5rem);max-width:12ch}
+.hero h1 span{display:block;color:var(--red)}
+.hero p{font-size:1.15rem;max-width:46ch;margin:22px 0 28px;color:var(--cement)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px}
+.ticker{background:var(--red);overflow:hidden;white-space:nowrap;padding:12px 0}
+.ticker div{display:inline-block;animation:tick 28s linear infinite;font-family:var(--f-display);font-size:1.4rem;letter-spacing:.05em}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.ticker div{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+/* SHOP */
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:24px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tab{background:none;border:2px solid #444;padding:8px 16px;font-weight:800;text-transform:uppercase;font-size:.85rem}
+.tab[aria-pressed=true]{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.tab.sale[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+.bar select,.bar input[type=number]{background:#111;border:2px solid #444;padding:10px 12px;min-height:44px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2px;background:#333;border:2px solid #333}
+.card{background:#000;position:relative;text-align:left;border:0;padding:0;display:block;width:100%}
+.ph{aspect-ratio:4/5;background:repeating-linear-gradient(45deg,#d4d4cf 0 10px,#c9c9c4 10px 20px);display:grid;place-items:center;overflow:hidden;position:relative}
+.ph svg{width:70%;transition:transform .35s cubic-bezier(.2,.8,.2,1);filter:drop-shadow(0 8px 10px #0003)}
+.card:hover .ph svg{transform:scale(1.1) rotate(-3deg)}
+.badge{position:absolute;top:10px;left:10px;background:var(--red);color:#fff;font-weight:800;font-size:.75rem;padding:3px 8px;z-index:1}
+.badge.n{background:#000}
+.heart{position:absolute;top:6px;right:6px;z-index:2;background:#fff;color:#000;border:0;border-radius:99px;width:44px;height:44px;font-size:1.2rem}
+.heart[aria-pressed=true]{color:var(--red)}
+.info{padding:14px 16px 18px}
+.info h3{margin:0 0 4px;font-size:1rem}
+.pr b{font-size:1.1rem}.pr s{color:var(--cement-d);margin-left:8px}.pr em{color:var(--red);font-style:normal;font-weight:800;margin-left:8px}
+.empty{padding:60px 20px;text-align:center;background:#000;grid-column:1/-1}
+/* dialogs */
+dialog{background:#0a0a0a;color:var(--paper);border:2px solid var(--paper);padding:0;max-width:min(920px,94vw);width:100%;max-height:92vh}
+dialog::backdrop{background:#000c}
+dialog.drawer{margin:0 0 0 auto;height:100%;max-height:100%;max-width:440px;border-width:0 0 0 2px}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border-bottom:1px solid #333}
+.pm{display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:700px){.pm{grid-template-columns:1fr}}
+.pm .body{padding:22px}
+.opt{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 16px}
+.opt button{min-width:44px;min-height:44px;background:none;border:2px solid #555;padding:6px 12px;font-weight:800}
+.opt button[aria-pressed=true]{background:var(--paper);color:#000;border-color:var(--paper)}
+.sw{width:44px;border-radius:99px;padding:0!important}
+.sw[aria-pressed=true]{outline:3px solid var(--red);outline-offset:2px}
+.stock{font-weight:800}.stock.low{color:var(--red)}
+details{border-top:1px solid #333;padding:10px 0}
+table{border-collapse:collapse;width:100%;font-size:.85rem}td,th{border:1px solid #444;padding:4px 8px;text-align:center}
+.rel{display:flex;gap:8px;overflow-x:auto;padding:8px 0}
+.rel button{flex:0 0 96px;background:#fff;border:0;padding:4px}
+.rel button svg{width:100%}
+.line{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:14px 20px;border-bottom:1px solid #222;align-items:center}
+.line .ph{aspect-ratio:1}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:36px;height:36px;background:none;border:2px solid #555}
+.cf{padding:20px;border-top:2px solid #333;margin-top:auto}
+.cf input{background:#111;border:2px solid #444;padding:10px;width:55%;min-height:44px}
+.note{font-size:.82rem;color:var(--cement-d)}
+/* build / quiz / community */
+.light{background:var(--cement);color:#000}
+.light .btn.o{color:#000;border-color:#000}.light .btn.o:hover{background:#000;color:#fff}
+.build{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+@media(max-width:760px){.build{grid-template-columns:1fr}}
+.stage{background:#fff;aspect-ratio:4/5;position:relative;max-width:420px;border:3px solid #000}
+.stage svg{position:absolute;left:50%;transform:translateX(-50%)}
+.pick{margin-bottom:14px}
+.pick label{font-weight:800;display:block}
+.pick select{width:100%;padding:10px;background:#fff;color:#000;border:2px solid #000;min-height:44px}
+.quiz .q{margin-bottom:22px}
+.quiz .opt button{border-color:#fff}
+.result{font-family:var(--f-display);font-size:clamp(2.4rem,8vw,5rem);text-transform:uppercase;color:var(--red);line-height:1}
+.posts{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:24px}
+.post{border:2px solid #444;padding:14px}
+.post .ph{margin-bottom:10px}
+.post button{background:none;border:2px solid #555;padding:8px 14px;font-weight:800;min-height:44px}
+form.row{display:flex;flex-wrap:wrap;gap:10px}
+form.row input{flex:1 1 220px;background:#111;border:2px solid #555;padding:12px;min-height:48px}
+footer{border-top:1px solid #333;padding:40px 0 60px;color:var(--cement)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(80px);background:var(--paper);color:#000;padding:12px 20px;font-weight:800;transition:transform .25s;z-index:99}
+.toast.on{transform:translateX(-50%)}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="logo" href="#top">STREET<i>/</i>CULTURE</a>
+  <nav class="main" id="nav" aria-label="Principal">
+    <a href="#tienda">Tienda</a><a href="#outfit">Outfit</a><a href="#estilo">Tu estilo</a><a href="#community">Community</a><a href="#club">Club</a>
+  </nav>
+  <button class="ib" id="wishBtn" aria-label="Favoritos">♥ <b id="wc">0</b></button>
+  <button class="ib" id="cartBtn" aria-label="Carrito">Carrito <b id="cc">0</b></button>
+  <button class="ib" id="burger" aria-label="Menú" aria-expanded="false">☰</button>
+</div></header>
+
+<main id="top">
+<div class="hero">
+  <div class="tag" aria-hidden="true">SC</div>
+  <div class="wrap">
+    <h1 class="d">No sigas las reglas.<span>Crea tu propio estilo.</span></h1>
+    <p>La calle es nuestra pasarela. Viste diferente. Sé auténtico. Sé STREET CULTURE.</p>
+    <div class="cta"><a class="btn" href="#tienda">Comprar ahora</a><a class="btn o" href="#tienda" data-go="new">Descubrir nueva colección</a></div>
+  </div>
+</div>
+<div class="ticker" aria-hidden="true"><div id="tk"></div></div>
+
+<section id="tienda"><div class="wrap">
+  <h2 class="d">New drop &amp; tienda</h2>
+  <div class="tabs" id="tabs" role="group" aria-label="Secciones"></div>
+  <div class="bar">
+    <select id="fCat" aria-label="Categoría"></select>
+    <select id="fSize" aria-label="Talla"><option value="">Talla: todas</option></select>
+    <select id="fCol" aria-label="Color"><option value="">Color: todos</option></select>
+    <label>Hasta $<input type="number" id="fMax" value="200" min="10" max="200" step="10" style="width:90px"></label>
+    <span class="note" id="count"></span>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<section class="light" id="outfit"><div class="wrap">
+  <h2 class="d">Personaliza tu outfit</h2>
+  <div class="build">
+    <div class="stage" id="stage" aria-label="Vista previa del outfit"></div>
+    <div>
+      <div class="pick"><label for="bTop">Parte de arriba</label><select id="bTop"></select></div>
+      <div class="pick"><label for="bBot">Pantalón</label><select id="bBot"></select></div>
+      <div class="pick"><label for="bJac">Chaqueta</label><select id="bJac"></select></div>
+      <div class="pick"><label for="bAcc">Accesorio</label><select id="bAcc"></select></div>
+      <p><b id="bTot"></b></p>
+      <button class="btn" id="bAdd">Añadir el look al carrito</button>
+    </div>
+  </div>
+</div></section>
+
+<section id="estilo"><div class="wrap quiz">
+  <h2 class="d">Encuentra tu estilo</h2>
+  <div id="quiz"></div>
+</div></section>
+
+<section class="light" id="community"><div class="wrap">
+  <h2 class="d">Street Community</h2>
+  <p>Comparte tu look, vota los mejores y entra al concurso del mes. Las publicaciones de esta demo solo se guardan en tu navegador.</p>
+  <form class="row" id="postForm"><input id="pName" placeholder="Tu apodo" maxlength="20" required aria-label="Apodo"><input id="pLook" placeholder="Describe tu outfit" maxlength="60" required aria-label="Descripción del look"><button class="btn">Publicar look</button></form>
+  <div class="posts" id="posts"></div>
+</div></section>
+
+<section id="club"><div class="wrap">
+  <h2 class="d">Entra al club.<br>Drops antes que nadie.</h2>
+  <p style="color:var(--cement);max-width:50ch">Suscríbete y recibe descuentos exclusivos y acceso anticipado a cada lanzamiento.</p>
+  <form class="row" id="nl"><input type="email" id="nlMail" placeholder="tu@correo.com" required aria-label="Correo"><button class="btn">Suscribirme</button></form>
+  <p class="note" id="nlMsg"></p>
+  <p><a href="#" class="btn o">Instagram</a> <a href="#" class="btn o">TikTok</a> <a href="#" class="btn o">Pinterest</a></p>
+</div></section>
+</main>
+
+<footer><div class="wrap"><div><div class="logo">STREET<i>/</i>CULTURE</div>YOUR STYLE. YOUR RULES. YOUR STREET.</div><div class="note">Demo de interfaz. Productos, imágenes y precios son de ejemplo.</div></div></footer>
+
+<dialog id="pd" aria-label="Producto"></dialog>
+<dialog id="cd" class="drawer" aria-label="Carrito"></dialog>
+<dialog id="wd" class="drawer" aria-label="Favoritos"></dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+var CATS={all:"Todas las categorías",tee:"Oversize T-shirts",hoodie:"Hoodies y sudaderas",cargo:"Pantalones cargo",jeans:"Jeans urbanos",jacket:"Chaquetas y bomber",acc:"Gorras y accesorios",sneaker:"Sneakers",set:"Conjuntos streetwear"};
+var SIZES=["XS","S","M","L","XL","XXL"];
+var COLS={Negro:"#111",Blanco:"#f2f2f2",Cemento:"#9a9a95",Rojo:"#e10600",Verde:"#39ff14"};
+var P=[
+{id:1,n:"Oversize Tee Concrete",c:"tee",p:39,o:0,col:["Negro","Blanco","Cemento"],t:["new","best"],s:24,d:"Algodón pesado de 280 g, corte caja y hombros caídos."},
+{id:2,n:"Tee Graffiti Red",c:"tee",p:44,o:55,col:["Blanco","Rojo"],t:["sale"],s:6,d:"Estampa serigrafiada a mano. Edición de barrio."},
+{id:3,n:"Hoodie Night Shift",c:"hoodie",p:79,o:0,col:["Negro","Cemento"],t:["new","best"],s:15,d:"Felpa gruesa, capucha doble y bolsillo canguro."},
+{id:4,n:"Crewneck Underground",c:"hoodie",p:69,o:89,col:["Cemento","Negro"],t:["sale"],s:9,d:"Sudadera sin capucha con bordado en el pecho."},
+{id:5,n:"Cargo Utility 6",c:"cargo",p:85,o:0,col:["Negro","Cemento"],t:["best"],s:18,d:"Seis bolsillos, ajuste en tobillo y tela ripstop."},
+{id:6,n:"Cargo Wide Alley",c:"cargo",p:92,o:0,col:["Cemento","Negro"],t:["new","limited"],s:4,d:"Pierna ancha y cintura elástica. Tirada corta."},
+{id:7,n:"Jean Baggy Wash",c:"jeans",p:88,o:110,col:["Negro","Cemento"],t:["sale","best"],s:12,d:"Denim rígido con lavado ácido y pierna baggy."},
+{id:8,n:"Bomber Rooftop",c:"jacket",p:139,o:0,col:["Negro","Rojo"],t:["new","limited"],s:3,d:"Bomber satinado con forro rojo reversible."},
+{id:9,n:"Coach Jacket Rules",c:"jacket",p:109,o:0,col:["Negro","Blanco"],t:["best"],s:10,d:"Cortavientos con botones a presión y logo trasero."},
+{id:10,n:"Cap 6 Panel SC",c:"acc",p:29,o:0,col:["Negro","Rojo","Verde"],t:["best"],s:40,d:"Gorra de seis paneles con cierre metálico ajustable."},
+{id:11,n:"Sneaker Block 01",c:"sneaker",p:129,o:160,col:["Blanco","Negro"],t:["sale","limited"],s:7,d:"Suela chunky y cuero sintético. Numerada."},
+{id:12,n:"Set Street Pack",c:"set",p:119,o:0,col:["Negro","Cemento"],t:["new"],s:11,d:"Hoodie y jogger a juego. Se compran juntos y salen mejor."}
+];
+var TABS=[["all","Todo"],["new","New drop"],["best","Best sellers"],["limited","Limited edition"],["sale","Sale"],["ess","Urban essentials"]];
+var ESS=[1,3,5,10];
+var $=function(s){return document.querySelector(s)};
+function load(k,d){try{var v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
+function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+var cart=load("sc_cart",[]),wish=load("sc_wish",[]),tab="all",coupon=load("sc_coupon",null);
+function byId(i){return P.filter(function(x){return x.id==i})[0]}
+function toast(m){var t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.h);toast.h=setTimeout(function(){t.classList.remove("on")},1800)}
+function money(n){return "$"+n.toFixed(2)}
+function shape(c){var m={
+tee:'<path d="M30 18L42 12Q50 22 58 12L70 18L92 38L81 49L72 42V88H28V42L19 49L8 38Z"/>',
+hoodie:'<path d="M28 22L40 14Q50 30 60 14L72 22L94 62L82 68L72 48V90H28V48L18 68L6 62Z"/><path d="M40 14Q50 30 60 14" fill="none" stroke="#0006" stroke-width="2"/><rect x="38" y="62" width="24" height="12" rx="2" fill="#0003"/>',
+cargo:'<path d="M30 8H70L76 92H54L50 40L46 92H24Z"/><rect x="31" y="50" width="12" height="14" fill="#0003"/><rect x="57" y="50" width="12" height="14" fill="#0003"/>',
+jeans:'<path d="M30 8H70L76 92H54L50 40L46 92H24Z"/><path d="M50 8V40" stroke="#0005" stroke-width="2"/>',
+jacket:'<path d="M26 16L40 10H60L74 16L96 58L84 64L74 44V86H26V44L16 64L4 58Z"/><path d="M50 10V86" stroke="#0006" stroke-width="2"/>',
+acc:'<path d="M14 62Q14 26 50 26Q86 26 86 62L98 68H14Z"/><circle cx="50" cy="26" r="3" fill="#0005"/>',
+sneaker:'<path d="M6 64V44L28 38L40 50L62 54Q92 58 94 72V78H6Z"/><rect x="6" y="72" width="88" height="8" fill="#fff"/>',
+set:'<path d="M20 8L32 4Q40 12 48 4L60 8L78 24L68 32L60 26V50H20V26L12 32L2 24Z" transform="scale(.8) translate(4 0)"/><path d="M52 40H86L90 96H72L69 66L66 96H48Z"/>'};return m[c]}
+function art(p,color,w){var f=COLS[color||p.col[0]];return '<svg viewBox="0 0 100 100" fill="'+f+'" aria-hidden="true"'+(w?' width="'+w+'"':'')+'>'+shape(p.c)+'</svg>'}
+function pct(p){return p.o?Math.round((1-p.p/p.o)*100):0}
+/* shop */
+function filtered(){var cat=$("#fCat").value,sz=$("#fSize").value,co=$("#fCol").value,mx=+$("#fMax").value||200;
+return P.filter(function(p){if(cat!="all"&&p.c!=cat)return false;if(co&&p.col.indexOf(co)<0)return false;if(p.p>mx)return false;
+if(tab=="ess")return ESS.indexOf(p.id)>=0;if(tab!="all"&&p.t.indexOf(tab)<0)return false;return true})}
+function renderGrid(){var l=filtered();$("#count").textContent=l.length+" productos";
+$("#grid").innerHTML=l.length?l.map(function(p){var on=wish.indexOf(p.id)>=0;
+return '<div class="card"><button class="heart" data-w="'+p.id+'" aria-pressed="'+on+'" aria-label="Favorito: '+p.n+'">'+(on?"♥":"♡")+'</button><button class="card" style="padding:0;border:0;background:none;color:inherit;text-align:left" data-o="'+p.id+'"><div class="ph">'+(p.o?'<span class="badge">-'+pct(p)+'%</span>':p.t.indexOf("new")>=0?'<span class="badge n">NEW</span>':'')+art(p)+'</div><div class="info"><h3>'+p.n+'</h3><div class="pr"><b>'+money(p.p)+'</b>'+(p.o?'<s>'+money(p.o)+'</s>':'')+'</div></div></button></div>'}).join(""):'<div class="empty"><h3 class="d">Nada con esos filtros</h3><p>Amplía el precio o quita el color y la talla para ver más prendas.</p></div>'}
+function init(){
+$("#tabs").innerHTML=TABS.map(function(t){return '<button class="tab'+(t[0]=="sale"?' sale':'')+'" data-t="'+t[0]+'" aria-pressed="'+(t[0]==tab)+'">'+t[1]+'</button>'}).join("");
+$("#fCat").innerHTML=Object.keys(CATS).map(function(k){return '<option value="'+k+'">'+CATS[k]+'</option>'}).join("");
+SIZES.forEach(function(s){$("#fSize").insertAdjacentHTML("beforeend",'<option>'+s+'</option>')});
+Object.keys(COLS).forEach(function(c){$("#fCol").insertAdjacentHTML("beforeend",'<option>'+c+'</option>')});
+var w="";for(var i=0;i<12;i++)w+="NO SIGAS LAS REGLAS &nbsp;/&nbsp; YOUR STREET &nbsp;/&nbsp; NEW DROP &nbsp;/&nbsp; ";$("#tk").innerHTML=w+w;
+renderGrid();renderBuild();renderQuiz();renderPosts();badges()}
+function badges(){$("#cc").textContent=cart.reduce(function(a,l){return a+l.q},0);$("#wc").textContent=wish.length}
+/* product modal */
+var sel={};
+function openP(id){var p=byId(id);sel={id:id,size:"",col:p.col[0]};drawP()}
+function drawP(){var p=byId(sel.id),d=$("#pd"),low=p.s<=5;
+var rel=P.filter(function(x){return x.id!=p.id&&x.c!=p.c}).slice(0,4);
+d.innerHTML='<div class="dh"><b>'+CATS[p.c]+'</b><button class="ib" data-close aria-label="Cerrar">✕</button></div><div class="pm"><div class="ph" style="aspect-ratio:auto;min-height:320px">'+art(p,sel.col)+'</div><div class="body"><h3 class="d" style="font-size:2.2rem">'+p.n+'</h3><div class="pr"><b style="font-size:1.6rem">'+money(p.p)+'</b>'+(p.o?'<s>'+money(p.o)+'</s><em>-'+pct(p)+'%</em>':'')+'</div><p>'+p.d+'</p>'+
+'<b>Talla</b><div class="opt">'+SIZES.map(function(s){return '<button data-s="'+s+'" aria-pressed="'+(sel.size==s)+'">'+s+'</button>'}).join("")+'</div>'+
+'<b>Color: '+sel.col+'</b><div class="opt">'+p.col.map(function(c){return '<button class="sw" data-c="'+c+'" aria-label="'+c+'" aria-pressed="'+(sel.col==c)+'" style="background:'+COLS[c]+'"></button>'}).join("")+'</div>'+
+'<p class="stock'+(low?' low':'')+'">'+(low?'Solo quedan '+p.s+' unidades':'En stock: '+p.s+' unidades')+'</p>'+
+'<button class="btn" data-add style="width:100%">Añadir al carrito</button>'+
+'<details><summary>Guía de tallas</summary><table><tr><th>Talla</th><th>Pecho cm</th><th>Largo cm</th></tr><tr><td>XS</td><td>96</td><td>66</td></tr><tr><td>S</td><td>100</td><td>68</td></tr><tr><td>M</td><td>104</td><td>70</td></tr><tr><td>L</td><td>108</td><td>72</td></tr><tr><td>XL</td><td>112</td><td>74</td></tr><tr><td>XXL</td><td>118</td><td>76</td></tr></table></details>'+
+'<b>Combina con</b><div class="rel">'+rel.map(function(x){return '<button data-o="'+x.id+'" aria-label="'+x.n+'">'+art(x)+'</button>'}).join("")+'</div></div></div>';
+if(!d.open)d.showModal()}
+/* cart */
+function addCart(id,size,col,q){var f=cart.filter(function(l){return l.id==id&&l.s==size&&l.c==col})[0];if(f)f.q+=q;else cart.push({id:id,s:size,c:col,q:q});save("sc_cart",cart);badges()}
+function drawCart(){var d=$("#cd"),sub=cart.reduce(function(a,l){return a+byId(l.id).p*l.q},0),disc=coupon?sub*coupon.v:0,ship=sub-disc>=150||!cart.length?0:9.9;
+d.innerHTML='<div style="display:flex;flex-direction:column;min-height:100%"><div class="dh"><b>Tu carrito</b><button class="ib" data-close aria-label="Cerrar">✕</button></div>'+
+(cart.length?cart.map(function(l,i){var p=byId(l.id);return '<div class="line"><div class="ph">'+art(p,l.c)+'</div><div><b>'+p.n+'</b><div class="note">'+l.s+' · '+l.c+' · '+money(p.p)+'</div><div class="qty"><button data-m="'+i+'" aria-label="Menos">−</button>'+l.q+'<button data-p="'+i+'" aria-label="Más">+</button></div></div><button class="ib" data-rm="'+i+'" aria-label="Eliminar">✕</button></div>'}).join(""):'<div class="empty" style="margin:auto"><h3 class="d">Carrito vacío</h3><p>Elige una prenda en la tienda y aparece aquí.</p></div>')+
+'<div class="cf"><form id="cpF"><input id="cp" placeholder="Cupón" aria-label="Cupón"> <button class="btn o" style="padding:10px 16px">Aplicar</button></form><p>Subtotal: '+money(sub)+(coupon?'<br>Cupón '+coupon.k+': -'+money(disc):'')+'<br>Envío: '+(ship?money(ship):'gratis')+' <span class="note">(gratis desde $150)</span></p><p><b style="font-size:1.3rem">Total: '+money(sub-disc+ship)+'</b></p><button class="btn" disabled style="width:100%">Pagar (pasarela no conectada)</button><p class="note">El pago, las cuentas y los pedidos necesitan un servidor y un proveedor de pagos reales. Aquí no se simula ninguna compra.</p></div></div>'}
+function openCart(){drawCart();$("#cd").showModal()}
+function drawWish(){var d=$("#wd");d.innerHTML='<div class="dh"><b>Favoritos</b><button class="ib" data-close aria-label="Cerrar">✕</button></div>'+(wish.length?wish.map(function(i){var p=byId(i);return '<div class="line"><div class="ph">'+art(p)+'</div><div><b>'+p.n+'</b><div class="note">'+money(p.p)+'</div></div><button class="btn o" style="padding:8px 12px" data-o="'+p.id+'">Ver</button></div>'}).join(""):'<div class="empty"><h3 class="d">Sin favoritos</h3><p>Toca el corazón de una prenda para guardarla.</p></div>');d.showModal()}
+/* outfit builder */
+function opts(sel,cats,none){var l=P.filter(function(p){return cats.indexOf(p.c)>=0});$(sel).innerHTML=(none?'<option value="">Sin '+none+'</option>':'')+l.map(function(p){return '<option value="'+p.id+'">'+p.n+' ('+money(p.p)+')</option>'}).join("")}
+function renderBuild(){opts("#bTop",["tee","hoodie"]);opts("#bBot",["cargo","jeans"]);opts("#bJac",["jacket"],"chaqueta");opts("#bAcc",["acc"],"accesorio");$("#bBot").value=5;drawBuild()}
+function bSel(){return["#bTop","#bBot","#bJac","#bAcc"].map(function(s){var v=$(s).value;return v?byId(v):null}).filter(Boolean)}
+function drawBuild(){var l=bSel(),pos={tee:[15,12,60],hoodie:[15,12,60],jacket:[5,8,80],cargo:[22,46,56],jeans:[22,46,56],acc:[30,0,40]},h="",tot=0;
+var order=l.slice().sort(function(a,b){var r={cargo:0,jeans:0,tee:1,hoodie:1,jacket:2,acc:3};return r[a.c]-r[b.c]});
+order.forEach(function(p){var q=pos[p.c];h+='<svg viewBox="0 0 100 100" fill="'+COLS[p.col[0]]+'" style="top:'+q[1]+'%;width:'+q[2]+'%;filter:drop-shadow(0 2px 2px #0004)" aria-hidden="true">'+shape(p.c)+'</svg>'});
+l.forEach(function(p){tot+=p.p});$("#stage").innerHTML=h;$("#bTot").textContent="Total del look: "+money(tot)}
+/* quiz */
+var QZ=[["¿Qué haces un sábado?",[["Skate en la plaza","skater"],["Freestyle con amigos","hiphop"],["Café y galerías","minimal"],["Cancha o gym","sport"],["Conciertos de garaje","under"]]],["¿Tu prenda favorita?",[["Tee holgada","skater"],["Bomber y cadenas","hiphop"],["Básicos en negro","minimal"],["Jogger técnico","sport"],["Chaqueta rota","under"]]],["¿Tu paleta?",[["Cemento y rojo","skater"],["Negro y dorado","hiphop"],["Blanco y negro","minimal"],["Verde neón","sport"],["Todo oscuro","under"]]]];
+var NAMES={skater:"Skater",hiphop:"Hip-hop",minimal:"Minimal streetwear",sport:"Urbano deportivo",under:"Underground"};
+var qa=[];
+function renderQuiz(){var q=$("#quiz"),i=qa.length;if(i<QZ.length){q.innerHTML='<div class="q"><h3>'+QZ[i][0]+'</h3><div class="opt">'+QZ[i][1].map(function(o){return '<button data-q="'+o[1]+'">'+o[0]+'</button>'}).join("")+'</div><p class="note">Pregunta '+(i+1)+' de '+QZ.length+'</p></div>';return}
+var c={};qa.forEach(function(k){c[k]=(c[k]||0)+1});var best=Object.keys(c).sort(function(a,b){return c[b]-c[a]})[0],pick={skater:[1,5],hiphop:[8,3],minimal:[9,7],sport:[12,10],under:[6,4]}[best];
+q.innerHTML='<div class="result">'+NAMES[best]+'</div><p>Prendas para ti:</p><div class="rel" style="max-width:400px">'+pick.map(function(id){var p=byId(id);return '<button data-o="'+id+'" aria-label="'+p.n+'" style="flex-basis:120px">'+art(p)+'</button>'}).join("")+'</div><button class="btn o" data-qr>Repetir test</button>'}
+/* community */
+var posts=load("sc_posts",[{n:"Valen",l:"Cargo + bomber + gorra roja",v:12,c:5,col:"Rojo"},{n:"Dani",l:"Oversize negro y sneakers blancos",v:9,c:1,col:"Negro"},{n:"Kai",l:"Set cemento, todo tono sobre tono",v:7,c:12,col:"Cemento"}]);
+function renderPosts(){var best=Math.max.apply(null,posts.map(function(p){return p.v}));$("#posts").innerHTML=posts.map(function(p,i){return '<div class="post"><div class="ph">'+art(byId(p.c)||P[0],p.col)+'</div><b>@'+esc(p.n)+'</b>'+(p.v==best?' <span class="badge n" style="position:static;background:#e10600">TOP</span>':'')+'<p>'+esc(p.l)+'</p><button data-v="'+i+'" aria-label="Votar">▲ '+p.v+'</button> <button data-sh="'+i+'">Compartir</button></div>'}).join("")}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+/* events */
+document.addEventListener("click",function(e){var t=e.target.closest("button,a");if(!t)return;var d=t.dataset;
+if("close" in d){t.closest("dialog").close();return}
+if(d.t){tab=d.t;document.querySelectorAll(".tab").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.t==tab)});renderGrid();return}
+if(d.go){tab=d.go;init();return}
+if(d.w){var i=+d.w,k=wish.indexOf(i);k>=0?wish.splice(k,1):wish.push(i);save("sc_wish",wish);badges();renderGrid();if($("#wd").open)drawWish();return}
+if(d.o){var dl=t.closest("dialog");if(dl&&dl.id=="wd")dl.close();openP(+d.o);return}
+if(d.s){sel.size=d.s;drawP();return}
+if(d.c){sel.col=d.c;drawP();return}
+if("add" in d){if(!sel.size){toast("Elige una talla primero");return}addCart(sel.id,sel.size,sel.col,1);$("#pd").close();toast("Añadido al carrito");return}
+if(d.m!==undefined){var l=cart[+d.m];l.q--;if(l.q<1)cart.splice(+d.m,1);save("sc_cart",cart);badges();drawCart();return}
+if(d.p!==undefined){cart[+d.p].q++;save("sc_cart",cart);badges();drawCart();return}
+if(d.rm!==undefined){cart.splice(+d.rm,1);save("sc_cart",cart);badges();drawCart();return}
+if(d.q){qa.push(d.q);renderQuiz();return}
+if("qr" in d){qa=[];renderQuiz();return}
+if(d.v!==undefined){posts[+d.v].v++;save("sc_posts",posts);renderPosts();return}
+if(d.sh!==undefined){var u=location.href,tx="Mira este look en STREET CULTURE";if(navigator.share){navigator.share({title:"STREET CULTURE",text:tx,url:u}).catch(function(){})}else toast("Copia el enlace de la página para compartir");return}
+});
+document.addEventListener("submit",function(e){e.preventDefault();var id=e.target.id;
+if(id=="cpF"){var k=$("#cp").value.trim().toUpperCase();if(k=="STREET10"){coupon={k:k,v:.1};save("sc_coupon",coupon);toast("Cupón aplicado")}else toast("Ese cupón no existe");drawCart()}
+if(id=="postForm"){posts.unshift({n:$("#pName").value,l:$("#pLook").value,v:0,c:(bSel()[0]||P[0]).id,col:(bSel()[0]||P[0]).col[0]});posts=posts.slice(0,12);save("sc_posts",posts);renderPosts();e.target.reset();toast("Look publicado")}
+if(id=="nl"){$("#nlMsg").textContent="Gracias. Esta demo no envía correos todavía: falta conectar un servicio de email."}});
+["#fCat","#fSize","#fCol","#fMax"].forEach(function(s){$(s).addEventListener("input",renderGrid)});
+["#bTop","#bBot","#bJac","#bAcc"].forEach(function(s){$(s).addEventListener("input",drawBuild)});
+$("#bAdd").onclick=function(){bSel().forEach(function(p){addCart(p.id,"M",p.col[0],1)});toast("Look añadido (talla M)")};
+$("#cartBtn").onclick=openCart;$("#wishBtn").onclick=drawWish;
+$("#burger").onclick=function(){var o=$("#nav").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+$("#nav").addEventListener("click",function(){this.classList.remove("open")});
+["pd","cd","wd"].forEach(function(i){$("#"+i).addEventListener("click",function(e){if(e.target==this)this.close()})});
+init();
+</script>
+</body>
+</html>
